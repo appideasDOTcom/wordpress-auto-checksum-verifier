@@ -7,7 +7,7 @@
  * Author URI:      https://appideas.com
  * Text Domain:     auto-checksum-verifier
  * Domain Path:     /languages
- * Version:         0.1.0
+ * Version:         1.0.0
  *
  * @package         Auto_Checksum_Verifier
  */
