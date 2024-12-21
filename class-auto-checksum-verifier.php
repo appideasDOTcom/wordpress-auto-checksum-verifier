@@ -145,17 +145,18 @@ class ACV_Auto_Checksum_Verifier {
 	public function verify_checksums() {
 		$options = get_option( 'acv_settings' );
 		$include_root = isset( $options['acv_include_root'] ) ? ' --include-root' : '';
-		$command = 'wp core verify-checksums' . $include_root;
+		$command = 'cd ' . ABSPATH . ' && wp core verify-checksums' . $include_root;
 		$output = shell_exec( $command . ' 2>&1' );
 
-		if ( strpos( $output, 'Success: WordPress installation verifies against checksums.' ) !== false ) {
+		$lines = explode( "\n", $output );
+		if ( isset( $lines[0] ) && strpos( $lines[0], 'Success: ' ) === 0 ) {
 			return true;
 		} else {
 			$email = isset( $options['acv_email'] ) ? $options['acv_email'] : get_option( 'admin_email' );
-			$subject = 'WordPress Checksum Verification Failed';
+			$subject = 'WordPress Checksum Verification Failed [' . get_site_url() . ']';
 			$headers = array('Content-Type: text/plain; charset=UTF-8');
-			$preamle = "WordPress Checksum Verification Failed for website " . get_site_url() . "\n\n";
-			wp_mail( $email, $subject, $preamle . $output, $headers );
+			$preamble = "WordPress Checksum Verification Failed for your website at " . get_site_url() . "\n\n";
+			wp_mail( $email, $subject, $preamble . $output, $headers );
 			return false;
 		}
 	}
