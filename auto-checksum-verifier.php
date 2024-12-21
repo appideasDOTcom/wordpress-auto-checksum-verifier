@@ -13,3 +13,5 @@
  */
 
 // Your code starts here.
+require_once plugin_dir_path( __FILE__ ) . 'includes/class-auto-checksum-verifier.php';
+ACV_Auto_Checksum_Verifier::get_instance();
