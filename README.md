@@ -20,3 +20,10 @@ A minimalistic security plugin that validates the checksums of WordPress Core fi
 - Install through WordPress Admin > Plugins > Add New Plugin > Upload Plugin
 
 ## Configuration ##
+-
+
+## Linting ##
+```
+composer install # one time
+./vendor/bin/phpcs -ps ./
+```

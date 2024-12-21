@@ -1,0 +1,20 @@
+{
+    "name": "appideas/auto-checksum-verifier",
+    "description": "A minimalistic security plugin that validates the checksums of WordPress Core files.",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Chris Ostmo",
+            "email": "chris@appideas.com"
+        }
+    ],
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "require-dev": {
+        "wp-coding-standards/wpcs": "^3.0",
+        "phpcompatibility/phpcompatibility-wp": "*"
+    }
+}
