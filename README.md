@@ -24,33 +24,33 @@ email address or the site admin.
 This will not prevent hacks from taking place, but it will provide the knowledge
 you need if and when such an event happens.
 
-Why? Properly developed, secured and maintained WordPress websites are rarely hacked.
+**Why?** Properly developed, secured and maintained WordPress websites are rarely hacked.
 On the other hand, security plugins that detect and fix hack attempts are very
 "heavy" and invariably affect the speed of your website traffic on every page load.
 This tool provides a non-resource-intrusive means of detecting these rare occurrences.
 
-Note that this plugin is primarily for agencies and developers to deploy on websites
+**Note** that this plugin is primarily for agencies and developers to deploy on websites
 that they maintain regularly. If you have been hacked or do not know how to respond
-to a hack report, we recommend installing one of the more complete thorough security
+to a hack report, we recommend installing one of the more thorough security
 plugins, or contacting one of our development partners for assistance.
 [APP(ideas)](https://appideas.com) or [Dotcomjungle](https://www.dotcomjungle.com/)
 
 ## Installation ##
-- Normal installation: From WordPress admin > Plugins > Add New Plugin, search for
+- **Normal installation:** From WordPress admin > Plugins > Add New Plugin, search for
 "Automatic Checksum Verifier." Once found, click "Install Now" and "Activate."
-- Manual installation: WordPress Admin > Plugins > Add New Plugin > Upload Plugin
+- **Manual installation:** WordPress Admin > Plugins > Add New Plugin > Upload Plugin
 
 ## Configuration ##
 - Go to WordPress Admin > Settings > Checksums
   - Add your email address
-  - Optional: Check "Include root files" to detect when unexpected files have been
+  - **Optional:** Check "Include root files" to detect when unexpected files have been
 added to your Core files
-- Optional: To control the schedule, install and activate the wp-crontrol plugin
+- **Optional:** To control the schedule, install and activate the wp-crontrol plugin
 from WordPress Admin > Settings > Plugins > Add New Plugin > Search
   - Go to Tools > Cron Events
   - Add a new event with the Hook Name "acv_verify_checksums" and your own schedule,
   or modify the current schedule for the "acv_verify_checksums" event.
-  - Note: If you do not install the wp-crontrol, Automatic Checksum Verifier will
+  - **Note:** If you do not install the wp-crontrol, Automatic Checksum Verifier will
 run at 1 AM daily, local server time.
 
 ## Linting ##

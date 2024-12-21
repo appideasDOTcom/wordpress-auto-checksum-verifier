@@ -29,7 +29,7 @@ This tool provides a non-resource-intrusive means of detecting these rare occurr
 
 Note that this plugin is primarily for agencies and developers to deploy on websites
 that they maintain regularly. If you have been hacked or do not know how to respond
-to a hack report, we recommend installing one of the more complete thorough security
+to a hack report, we recommend installing one of the more thorough security
 plugins, or contacting one of our development partners for assistance.
 APP(ideas) at https://appideas.com or Dotcomjungle at https://www.dotcomjungle.com/
 
