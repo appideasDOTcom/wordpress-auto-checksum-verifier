@@ -14,4 +14,5 @@
 
 // Your code starts here.
 require_once plugin_dir_path( __FILE__ ) . 'class-auto-checksum-verifier.php';
+register_activation_hook( __FILE__, array( 'ACV_Auto_Checksum_Verifier', 'activate' ) );
 ACV_Auto_Checksum_Verifier::get_instance();
