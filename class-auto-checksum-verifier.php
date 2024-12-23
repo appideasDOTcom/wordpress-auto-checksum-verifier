@@ -67,8 +67,8 @@ class ACV_Auto_Checksum_Verifier {
 
 		add_settings_section(
 			'acv_checksums_section',
-			__( 'Checksum Settings', 'auto-checksum-verifier' ),
-			null,
+			__( 'Automiatic Checksum Verifier Settings', 'auto-checksum-verifier' ),
+			array( $this, 'admin_page_description' ),
 			'acv_checksums'
 		);
 
@@ -95,6 +95,13 @@ class ACV_Auto_Checksum_Verifier {
 			'acv_checksums',
 			'acv_checksums_section'
 		);
+	}
+
+	/**
+	 * Provide a description for the settings page.
+	 */
+	public function admin_page_description() {
+		echo '<p>' . __( 'Automatically verify the checksums of WordPress Core files and send an email if the verification fails.', 'auto-checksum-verifier' ) . '</p>';
 	}
 
 	/**
@@ -128,6 +135,7 @@ class ACV_Auto_Checksum_Verifier {
 		$email = isset( $options['acv_email'] ) ? $options['acv_email'] : get_option( 'admin_email' );
 		?>
 		<input type='email' name='acv_settings[acv_email]' value='<?php echo esc_attr( $email ); ?>'>
+		<p><label for='acv_settings[acv_email]'><?php _e( 'Email address to receive notifications', 'auto-checksum-verifier' ); ?></label></p>
 		<?php
 	}
 
@@ -139,6 +147,7 @@ class ACV_Auto_Checksum_Verifier {
 		$checked = isset( $options['acv_include_root'] ) ? $options['acv_include_root'] : '';
 		?>
 		<input type='checkbox' name='acv_settings[acv_include_root]' <?php checked( $checked, 'on' ); ?>>
+		<p><label for='acv_settings[acv_include_root]'><?php _e( 'Include files from the root directory in the verification', 'auto-checksum-verifier' ); ?></label></p>
 		<?php
 	}
 
